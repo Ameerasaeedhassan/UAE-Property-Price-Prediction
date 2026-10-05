@@ -16,16 +16,16 @@ The project starts with raw real-estate records, transforms them into analysis-r
 
 The raw Dubai data was not reduced because the remaining records were simply "bad." Transactions such as **mortgages, gifts, commercial properties, and land** were excluded from the ML dataset to focus specifically on **residential Unit & Villa sales**.
 
-## 🔎 What Does the Analysis Show?
+## What Does the Analysis Show?
 
-- 📈 How property prices and sales activity change over time
-- 📍 Which Dubai areas have higher property values
-- 🏠 Differences between property types and bedroom categories
-- 📐 How property size relates to sale price
+-  How property prices and sales activity change over time
+-  Which Dubai areas have higher property values
+-  Differences between property types and bedroom categories
+-  How property size relates to sale price
 - 🇦🇪 How Dubai and Ajman market activity has changed since 2019
-- 💰 How prediction performance changes across normal and luxury properties
+-  How prediction performance changes across normal and luxury properties
 
-## 🤖 Machine Learning
+##  Machine Learning
 
 Three regression models were evaluated:
 
@@ -47,14 +47,14 @@ The models use:
 
 Prediction became more difficult for luxury properties, highlighting the complexity and variability of real-world property prices.
 
-## 📁 Project
+## Project
 
 - `03_dubai_cleaning.ipynb` — Raw data → clean residential transactions
 - `04_ajman_cleaning.ipynb` — Ajman data preparation
 - `05_exploratory_analysis.ipynb` — Market trends & Dubai–Ajman analysis
 - `06_dubai_price_model.ipynb` — Machine learning & evaluation
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 **Python · Pandas · NumPy · Matplotlib · scikit-learn · Jupyter · Git · GitHub**
 
