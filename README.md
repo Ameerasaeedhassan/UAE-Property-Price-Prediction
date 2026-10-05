@@ -1,6 +1,6 @@
 #  UAE Real Estate Analytics & Price Prediction 🏙️
 
-### What is happening in the UAE real-estate market — and can property prices be predicted from historical transactions?
+### What is happening in the UAE real-estate market and can property prices be predicted from historical transactions?
 
 An end-to-end **data analytics and machine learning project** using real-world public property data from **Dubai and Ajman**.
 
