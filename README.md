@@ -1,29 +1,45 @@
-#  UAE Real Estate Analytics & Price Prediction
+#  UAE Real Estate Analytics & Price Prediction 🏙️
 
 ### What is happening in the UAE real-estate market — and can property prices be predicted from historical transactions?
 
 An end-to-end **data analytics and machine learning project** using real-world public property data from **Dubai and Ajman**.
 
-The project starts with raw real-estate records, transforms them into analysis-ready data, explores market trends, and builds machine-learning models to predict Dubai residential sale prices.
+The project transforms raw real-estate records into market insights and uses machine learning to predict Dubai residential sale prices.
 
 ##  From Raw Data to Insights 📊
 
 - **898K+** raw Dubai property records analyzed
 - **550K+** qualifying residential sales prepared for analysis
-- Real transactions covering different property types and transaction categories
 - Dubai and Ajman market trends compared from **2019–2026**
 - Price, location, property type, size, and sales activity explored
 
-The raw Dubai data was not reduced because the remaining records were simply "bad." Transactions such as **mortgages, gifts, commercial properties, and land** were excluded from the ML dataset to focus specifically on **residential Unit & Villa sales**.
+Transactions such as **mortgages, gifts, commercial properties, and land** were excluded from the ML dataset to focus specifically on **residential Unit & Villa sales**.
 
-## What Does the Analysis Show?
+##  Market Analysis
 
--  How property prices and sales activity change over time
--  Which Dubai areas have higher property values
--  Differences between property types and bedroom categories
--  How property size relates to sale price
-- 🇦🇪 How Dubai and Ajman market activity has changed since 2019
--  How prediction performance changes across normal and luxury properties
+###  Dubai Property Price Trend
+
+Dubai residential median sale prices increased strongly after 2020, reaching their highest levels around 2022–2023 before showing some moderation.
+
+![Dubai Residential Price Trend](images/dubai_price_trend.png)
+
+###  Highest-Priced Dubai Areas
+
+The analysis compares median residential sale prices across Dubai areas with sufficient transaction activity, highlighting major differences between locations.
+
+![Top Dubai Areas](images/dubai_top_areas.png)
+
+###  Dubai vs Ajman Sales Activity
+
+Because Dubai and Ajman datasets have different structures, sales activity was normalized using **2019 = 100** to compare how both markets changed over time.
+
+![Dubai vs Ajman Sales Activity](images/dubai_ajman_activity.png)
+
+###  Dubai vs Ajman Property Value Trend
+
+Normalized property values show how residential market values in both emirates evolved relative to their 2019 levels.
+
+![Dubai vs Ajman Sale Value Trend](images/dubai_ajman_value.png)
 
 ##  Machine Learning
 
@@ -31,28 +47,30 @@ Three regression models were evaluated:
 
 **Linear Regression** · **HistGradientBoosting Regressor** · **Log-HistGradientBoosting Regressor**
 
-The models use:
+Models use:
 
 `Location` · `Property Type` · `Bedrooms` · `Size` · `Parking` · `Year` · `Quarter`
 
-### Prediction Results
-
-| Model | Within ±20% | Within ±30% |
+| Model | MAE (AED) | R² |
 |---|---:|---:|
-| Linear Regression | 41.8% | 57.3% |
-| HistGradientBoosting | 50.7% | 72.1% |
-| **Log-HistGradientBoosting** | **51.7%** | **74.7%** |
+| Linear Regression | 711,818 | **0.644** |
+| HistGradientBoosting | 579,150 | 0.409 |
+| **Log-HistGradientBoosting** | **562,645** | 0.407 |
 
-**Log-HistGradientBoosting** achieved the lowest overall MAE of approximately **AED 563K**, with **74.7% of predictions falling within ±30% of the actual sale price**.
+The Log-HistGradientBoosting model achieved the **lowest overall MAE**, while Linear Regression achieved the **highest R²**.
 
-Prediction became more difficult for luxury properties, highlighting the complexity and variability of real-world property prices.
+###  Actual vs Predicted Prices
+
+Predictions follow actual prices more closely for lower and mid-priced properties. Errors increase for high-value properties, with the model tending to underestimate some luxury transactions.
+
+![Actual vs Predicted Property Prices](images/actual_vs_predicted.png)
 
 ## Project
 
-- `03_dubai_cleaning.ipynb` — Raw data → clean residential transactions
+- `03_dubai_cleaning.ipynb` — Raw Dubai data → clean residential transactions
 - `04_ajman_cleaning.ipynb` — Ajman data preparation
-- `05_exploratory_analysis.ipynb` — Market trends & Dubai–Ajman analysis
-- `06_dubai_price_model.ipynb` — Machine learning & evaluation
+- `05_exploratory_analysis.ipynb` — Market trends & Dubai–Ajman comparison
+- `06_dubai_price_model.ipynb` — Machine learning & model evaluation
 
 ##  Tech Stack
 
