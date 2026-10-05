@@ -1,0 +1,12 @@
+data/raw/*
+data/processed/*
+
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+notebooks/01_data_inspection.ipynb
+notebooks/02_full_data_inspection.ipynb
+
+.venv/
+__pycache__/
+.ipynb_checkpoints/
