@@ -98,7 +98,8 @@ The application returns an estimated residential property value based on pattern
 ### [Launch Dubai Property Valuation App](https://ameerasaeedhassan-uae-property-price-prediction-app-thb1hl.streamlit.app/)
 
 ---
-
+## Tech Stack
+Python · Pandas · NumPy · Matplotlib · scikit-learn · Streamlit · Jupyter · Git/GitHub
 ## Project Structure
 
 ```text
@@ -125,9 +126,6 @@ UAE-Property-Price-Prediction/
 │
 └── README.md
 
-
-## Tech Stack
-Python · Pandas · NumPy · Matplotlib · scikit-learn · Streamlit · Jupyter · Git/GitHub
-## Note
+Note
 The valuation model is intended as a data science project and analytical estimate, not a professional property appraisal.
 2026 data represents a partial year and should be interpreted accordingly.
