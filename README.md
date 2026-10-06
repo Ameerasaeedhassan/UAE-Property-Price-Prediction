@@ -100,6 +100,25 @@ The application returns an estimated residential property value based on pattern
 ---
 ## Tech Stack
 Python · Pandas · NumPy · Matplotlib · scikit-learn · Streamlit · Jupyter · Git/GitHub
+
+---
+
+## Data Sources
+
+This project uses publicly available UAE government real estate data.
+
+- **Dubai Real Estate Transactions** — Dubai Land Department (DLD), Data Dubai  
+  [View Official Dataset](https://data.dubai/en/l/470061?com_dda_data_and_statistics_ThemeId=3282906)
+
+- **Ajman Real Estate Units Sales** — Department of Land and Real Estate Regulation, Ajman Data  
+  [View Official Dataset](https://data.ajman.ae/explore/assets/real-estate-units-sales/)
+
+The Dubai dataset contains transaction-level real estate records, while the Ajman dataset contains aggregated property sales records.
+
+Raw datasets are not included in this repository due to file size. All data is credited to the respective UAE government data providers.
+
+---
+
 ## Project Structure
 
 ```text
