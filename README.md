@@ -1,55 +1,67 @@
-#  UAE Real Estate Analytics & Price Prediction 🏙️
+# UAE Real Estate Analytics & Price Prediction 🏙️
 
-### What is happening in the UAE real-estate market and can property prices be predicted from historical transactions?
+An end-to-end real estate analytics and machine learning project built with public Dubai and Ajman property data.
 
-An end-to-end **data analytics and machine learning project** using real-world public property data from **Dubai and Ajman**.
+The project analyzes market trends across the two emirates and develops a machine learning model for estimating Dubai residential property values.
 
-The project transforms raw real-estate records into market insights and uses machine learning to predict Dubai residential sale prices.
+### [View Live Property Valuation App](https://ameerasaeedhassan-uae-property-price-prediction-app-thb1hl.streamlit.app/)
 
-##  From Raw Data to Insights 📊
+---
 
-- **898K+** raw Dubai property records analyzed
-- **550K+** qualifying residential sales prepared for analysis
-- Dubai and Ajman market trends compared from **2019–2026**
-- Price, location, property type, size, and sales activity explored
+## Project Overview
 
-Transactions such as **mortgages, gifts, commercial properties, and land** were excluded from the ML dataset to focus specifically on **residential Unit & Villa sales**.
+**898K+** Dubai property records were processed to study the UAE real estate market and build a residential property valuation model.
 
-##  Market Analysis
+After filtering and data quality checks, **550K+ residential Unit and Villa sales** were used for analysis and model development.
 
-###  Dubai Property Price Trend
+The project covers:
 
-Dubai residential median sale prices increased strongly after 2020, reaching their highest levels around 2022–2023 before showing some moderation.
+- Dubai residential market analysis
+- Dubai and Ajman market comparison from 2019–2026
+- Location and property-type analysis
+- Residential price modelling
+- Model evaluation and error analysis
+- Interactive property valuation web application
+
+Mortgages, gifts, commercial properties, land, and other non-residential transactions were excluded from the modelling dataset.
+
+---
+
+## Market Analysis
+
+### Dubai Residential Price Trend
+
+Dubai residential median sale prices increased strongly after 2020, with noticeable changes in market activity and property values over the following years.
 
 ![Dubai Residential Price Trend](images/dubai_price_trend.png)
 
-###  Highest-Priced Dubai Areas
+### Highest-Priced Dubai Areas
 
-The analysis compares median residential sale prices across Dubai areas with sufficient transaction activity, highlighting major differences between locations.
+Residential prices vary significantly by location. The analysis compares median sale prices across Dubai areas with sufficient transaction activity.
 
 ![Top Dubai Areas](images/dubai_top_areas.png)
 
-###  Dubai vs Ajman Sales Activity
+### Dubai vs Ajman — Sales Activity
 
-Because Dubai and Ajman datasets have different structures, sales activity was normalized using **2019 = 100** to compare how both markets changed over time.
+Dubai and Ajman datasets have different structures, so sales activity was normalized using **2019 = 100** to make the market movements comparable.
 
 ![Dubai vs Ajman Sales Activity](images/dubai_ajman_activity.png)
 
-###  Dubai vs Ajman Property Value Trend
+### Dubai vs Ajman — Property Values
 
-Normalized property values show how residential market values in both emirates evolved relative to their 2019 levels.
+The normalized value index shows how property values in both emirates changed relative to their 2019 levels.
 
 ![Dubai vs Ajman Sale Value Trend](images/dubai_ajman_value.png)
 
-##  Machine Learning
+---
 
-Three regression models were evaluated:
+## Property Price Model
 
-**Linear Regression** · **HistGradientBoosting Regressor** · **Log-HistGradientBoosting Regressor**
-
-Models use:
+The Dubai valuation model uses seven property and transaction characteristics:
 
 `Location` · `Property Type` · `Bedrooms` · `Size` · `Parking` · `Year` · `Quarter`
+
+Three regression approaches were tested:
 
 | Model | MAE (AED) | R² |
 |---|---:|---:|
@@ -57,23 +69,65 @@ Models use:
 | HistGradientBoosting | 579,150 | 0.409 |
 | **Log-HistGradientBoosting** | **562,645** | 0.407 |
 
-The Log-HistGradientBoosting model achieved the **lowest overall MAE**, while Linear Regression achieved the **highest R²**.
+**Log-HistGradientBoosting** produced the lowest overall Mean Absolute Error at approximately **AED 563K**.
 
-###  Actual vs Predicted Prices
+Linear Regression achieved the highest R², showing that model selection depends on the evaluation metric and intended use.
 
-Predictions follow actual prices more closely for lower and mid-priced properties. Errors increase for high-value properties, with the model tending to underestimate some luxury transactions.
+### Actual vs Predicted Prices
+
+The model performs more consistently for lower and mid-priced properties. Prediction errors increase in the luxury segment, where transaction values are more variable.
 
 ![Actual vs Predicted Property Prices](images/actual_vs_predicted.png)
 
-## Project
+---
 
-- `03_dubai_cleaning.ipynb` — Raw Dubai data → clean residential transactions
-- `04_ajman_cleaning.ipynb` — Ajman data preparation
-- `05_exploratory_analysis.ipynb` — Market trends & Dubai–Ajman comparison
-- `06_dubai_price_model.ipynb` — Machine learning & model evaluation
+## Interactive Valuation App
 
-##  Tech Stack
+The trained model is deployed as an interactive Streamlit application.
 
-**Python · Pandas · NumPy · Matplotlib · scikit-learn · Jupyter · Git · GitHub**
+Users can enter:
 
-> **Data Note:** This project uses real-world public real-estate data. Raw and processed datasets are excluded from GitHub due to file size and data-distribution considerations.
+- Dubai location
+- Property type
+- Number of bedrooms
+- Property size
+- Parking availability
+
+The application returns an estimated residential property value based on patterns learned from historical Dubai transactions.
+
+### [Launch Dubai Property Valuation App](https://ameerasaeedhassan-uae-property-price-prediction-app-thb1hl.streamlit.app/)
+
+---
+
+## Project Structure
+
+```text
+UAE-Property-Price-Prediction/
+│
+├── app.py
+├── requirements.txt
+│
+├── models/
+│   └── dubai_property_model.joblib
+│
+├── notebooks/
+│   ├── 03_dubai_cleaning.ipynb
+│   ├── 04_ajman_cleaning.ipynb
+│   ├── 05_exploratory_analysis.ipynb
+│   └── 06_dubai_price_model.ipynb
+│
+├── images/
+│   ├── dubai_price_trend.png
+│   ├── dubai_top_areas.png
+│   ├── dubai_ajman_activity.png
+│   ├── dubai_ajman_value.png
+│   └── actual_vs_predicted.png
+│
+└── README.md
+
+
+## Tech Stack
+Python · Pandas · NumPy · Matplotlib · scikit-learn · Streamlit · Jupyter · Git/GitHub
+## Note
+The valuation model is intended as a data science project and analytical estimate, not a professional property appraisal.
+2026 data represents a partial year and should be interpreted accordingly.
